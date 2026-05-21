@@ -6,7 +6,7 @@ const OUTPUT_DIR = './dist';
 
 const TEMPLATE = `<!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>{{TITLE}}</title></head>
+<head><meta charset="UTF-8"><title>Мой SSG</title></head>
 <body>
     <h1>{{TITLE}}</h1>
     {{CONTENT}}
@@ -20,7 +20,7 @@ const TEMPLATE = `<!DOCTYPE html>
 function md2html(md) {
     let html = md;
     html = html.replace(/^# (.*$)/gm, '<h1>$1</h1>');
-    html = html.replace(/^## (.*$)/gm, '<h2>$2</h2>');
+    html = html.replace(/^## (.*$)/gm, '<h2>$1</h2>');
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
     return html;
